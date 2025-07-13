@@ -3,12 +3,14 @@ kind: Kustomization
 namespace: grammr
 resources:
   - release.yaml
+  - jwt-public-key-cm.yaml
 configMapGenerator:
-  - name: clerk-jwt-public-key
-    files:
-      - jwt-key.pub=jwt-key.pub
   - name: core-values-cm
     files:
       - values.yaml=values.yaml
+secretGenerator:
+  - name: core-values-secret
+    files:
+      - values.yaml=values.enc.yaml
 configurations:
   - kustomizeconfig.yaml
