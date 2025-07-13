@@ -30,7 +30,7 @@ languages:
   - code: ru
     morphology:
       enabled: true
-      uri: https://b4l7c733qf.execute-api.eu-central-1.amazonaws.com/dev/morphology-ru
+      uri: https://morphology-ru.grammr:8000/morphological-analysis
     inflection:
       enabled: true
       uri: http://inflection-ru.grammr-dev:8000/inflect

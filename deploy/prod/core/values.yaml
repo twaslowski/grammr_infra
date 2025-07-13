@@ -7,7 +7,7 @@ environmentVariables:
         name: grammr-db-pguser-grammr
         key: jdbc-uri
   - name: ALLOWED_ORIGIN
-    value: https://dev.grammr.app
+    value: https://grammr.app
   - name: ANKI_EXPORTER_URL
     value: http://anki-exporter.grammr:8000
   - name: SPRING_PROFILES_ACTIVE
@@ -21,7 +21,7 @@ environmentVariables:
 ingress:
   enabled: true
   className: cloudflare-tunnel
-  host: server-dev.grammr.app
+  host: server.grammr.app
   paths:
     - /api/
     - /actuator/health
@@ -30,7 +30,7 @@ languages:
   - code: ru
     morphology:
       enabled: true
-      uri: https://b4l7c733qf.execute-api.eu-central-1.amazonaws.com/dev/morphology-ru
+      uri: https://morphology-ru.grammr:8000/morphological-analysis
     inflection:
       enabled: true
       uri: http://inflection-ru.grammr:8000/inflect
