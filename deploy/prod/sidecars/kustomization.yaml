@@ -4,3 +4,4 @@ namespace: grammr
 resources:
   - anki-exporter.yaml
   - inflection-ru.yaml
+  - morphology.yaml
