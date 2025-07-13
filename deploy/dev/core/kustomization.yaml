@@ -3,12 +3,13 @@ kind: Kustomization
 namespace: grammr-dev
 resources:
   - release.yaml
+  - jwt-public-key-cm.yaml
 configMapGenerator:
   - name: core-values-cm
     files:
       - values.yaml=values.yaml
 secretGenerator:
-  - name: grammr-values
+  - name: core-values-secret
     files:
       - values.yaml=values.enc.yaml
 configurations:
