@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jwt-public-key
+  namespace: grammr-dev
+data:
+  jwt-key.pub: |
+    # The contents of jwt-key.pub will be loaded here
+    # (Helm can template this in, or you can use kubectl create configmap --from-file)
+

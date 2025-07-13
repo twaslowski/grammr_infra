@@ -1,10 +1,7 @@
+environment: dev
 fullnameOverride: core
-
 openai:
   api-key: ENC[AES256_GCM,data:pnfjZXkCynSg5Yy2/RgAy5nS7pz43MhjL6/bj6lqDrqI6Hhq7r7C0sXB0n5zrr+t3YxrOq/L7sfepeEDnfHAdmL57wXYB8ixzdCwxTMfGUiU30DlGlTdLV3sRZ2KuZjBFB6SdqPwgXqrnEeAsR0Mv2Dum3FVyTbLQPHBFZFy8rOwFuCu/dK0k1f0d5HTiR2dPUxOC0p9Qm83VdkhOvKV8nYQekU=,iv:YsHFRTb0YnjiYF0TyOXraNT57Ms7XgNTF1Z8DvSpm+Y=,tag:MwvOlHv8zSqxInMqIGP59Q==,type:str]
-
-image:
-  tag: 3.5.0
 
 environmentVariables:
   - name: DATASOURCE_URL
@@ -17,13 +14,7 @@ environmentVariables:
   - name: ANKI_EXPORTER_URL
     value: http://anki-exporter.grammr-dev:8000
   - name: SPRING_PROFILES_ACTIVE
-    value: runtime
-  - name: JWT_PUBLIC_KEY
-    valueFrom:
-      configMapKeyRef:
-        name: clerk-jwt-public-key
-        key: jwt-key.pub
-
+    value: dev
 ingress:
   enabled: true
   className: cloudflare-tunnel
@@ -31,7 +22,6 @@ ingress:
   paths:
     - /api/
     - /actuator/health
-
 languages:
   - code: ru
     morphology:
@@ -40,7 +30,6 @@ languages:
     inflection:
       enabled: true
       uri: http://inflection-ru.grammr-dev:8000/inflect
-
 sops:
   age:
     - recipient: age1a5juyrapd78njp023e8hf0nmzvgwz2h47kcdvum4kh8m8ww4n9fqveqfzl
