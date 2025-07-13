@@ -4,7 +4,7 @@ metadata:
   name: grammr-db
   namespace: grammr-dev
 spec:
-  dataSource:
+#  dataSource:
 #    pgbackrest:
 #      stanza: db
 #      configuration:
