@@ -17,4 +17,4 @@ spec:
   values:
     languages:
       - code: "ru"
-        model: "ru_core_news_lg"
+        model: "ru_core_news_md"
