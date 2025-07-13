@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: grammr-dev
+namespace: grammr
 resources:
   - release.yaml
 configMapGenerator:
@@ -10,9 +10,5 @@ configMapGenerator:
   - name: core-values-cm
     files:
       - values.yaml=values.yaml
-secretGenerator:
-  - name: cloudflared-values
-    files:
-      - values.yaml=values.enc.yaml
 configurations:
   - kustomizeconfig.yaml

@@ -2,7 +2,7 @@ apiVersion: postgres-operator.crunchydata.com/v1beta1
 kind: PostgresCluster
 metadata:
   name: grammr-db
-  namespace: grammr-dev
+  namespace: grammr
 spec:
 #  dataSource:
 #    pgbackrest:
@@ -24,7 +24,7 @@ spec:
         - secret:
             name: grammr-db-pgbackrest-secret
       global:
-        repo1-path: /pgbackrest/grammr-dev/grammr-db/repo1
+        repo1-path: /pgbackrest/grammr/grammr-db/repo1
         repo1-retention-full: "30"
         repo1-retention-full-type: time
       manual:

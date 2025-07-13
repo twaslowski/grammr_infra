@@ -1,17 +1,11 @@
 fullnameOverride: core
 
-openai:
-  api-key: ENC[AES256_GCM,data:pnfjZXkCynSg5Yy2/RgAy5nS7pz43MhjL6/bj6lqDrqI6Hhq7r7C0sXB0n5zrr+t3YxrOq/L7sfepeEDnfHAdmL57wXYB8ixzdCwxTMfGUiU30DlGlTdLV3sRZ2KuZjBFB6SdqPwgXqrnEeAsR0Mv2Dum3FVyTbLQPHBFZFy8rOwFuCu/dK0k1f0d5HTiR2dPUxOC0p9Qm83VdkhOvKV8nYQekU=,iv:YsHFRTb0YnjiYF0TyOXraNT57Ms7XgNTF1Z8DvSpm+Y=,tag:MwvOlHv8zSqxInMqIGP59Q==,type:str]
-
-#image:
-#  tag: 3.5.0
-
 environmentVariables:
   - name: DATASOURCE_URL
     valueFrom:
       secretKeyRef:
-        - name: grammr-db-pguser-grammr
-          key: jdbc-uri
+        name: grammr-db-pguser-grammr
+        key: jdbc-uri
   - name: ALLOWED_ORIGIN
     value: https://dev.grammr.app
   - name: ANKI_EXPORTER_URL

@@ -17,3 +17,5 @@ spec:
   valuesFrom:
     - kind: ConfigMap
       name: core-values-cm
+    - kind: Secret
+      name: grammr-values
