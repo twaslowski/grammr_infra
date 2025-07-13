@@ -1,0 +1,46 @@
+environment: dev
+fullnameOverride: core
+openai:
+  api-key: ENC[AES256_GCM,data:pnfjZXkCynSg5Yy2/RgAy5nS7pz43MhjL6/bj6lqDrqI6Hhq7r7C0sXB0n5zrr+t3YxrOq/L7sfepeEDnfHAdmL57wXYB8ixzdCwxTMfGUiU30DlGlTdLV3sRZ2KuZjBFB6SdqPwgXqrnEeAsR0Mv2Dum3FVyTbLQPHBFZFy8rOwFuCu/dK0k1f0d5HTiR2dPUxOC0p9Qm83VdkhOvKV8nYQekU=,iv:YsHFRTb0YnjiYF0TyOXraNT57Ms7XgNTF1Z8DvSpm+Y=,tag:MwvOlHv8zSqxInMqIGP59Q==,type:str]
+environmentVariables:
+  - name: DATASOURCE_URL
+    valueFrom:
+      secretKeyRef:
+        - name: grammr-db-pguser-grammr
+          key: uri
+  - name: ALLOWED_ORIGIN
+    value: https://dev.grammr.app
+  - name: ANKI_EXPORTER_URL
+    value: http://anki-exporter.grammr-dev:8000
+  - name: SPRING_PROFILES_ACTIVE
+    value: dev
+ingress:
+  enabled: true
+  className: cloudflare-tunnel
+  host: server-dev.grammr.app
+  paths:
+    - /api/
+    - /actuator/health
+languages:
+  - code: ru
+    morphology:
+      enabled: true
+      uri: https://b4l7c733qf.execute-api.eu-central-1.amazonaws.com/dev/morphology-ru
+    inflection:
+      enabled: true
+      uri: http://inflection-ru.grammr-dev:8000/inflect
+sops:
+  age:
+    - recipient: age1a5juyrapd78njp023e8hf0nmzvgwz2h47kcdvum4kh8m8ww4n9fqveqfzl
+      enc: |
+        -----BEGIN AGE ENCRYPTED FILE-----
+        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBSQWFHOGRpaWI0YVErdWdK
+        NVRmd1NadkNjQitNU25XZ25qUGszcDZJa2tJCnYzOFdlRTMvNXNkd2ZDWXVudGRX
+        SFMvMnV6OWJLMGVPcDQwTk5lcWhPMVEKLS0tIFZsM3NPRFJ5cmFzMnhrTmtPVy9D
+        Z0hMWXJ4V3BBZFhWb211UG9IaFNYRkkKrM8PwwMUvEJKQiFpRd+Wdpwee6d/lxCB
+        MJMz4QQDLe42weWMsnGtJhnL4D3k7D24+xDf3w33CcTpmmBGVlPUcQ==
+        -----END AGE ENCRYPTED FILE-----
+  lastmodified: "2025-07-13T07:26:00Z"
+  mac: ENC[AES256_GCM,data:BB3EBnGXc/6nB2G0PjdAE9OWA7rTeKubRQ9OvHjqmAoKX+HbHdM6Nc9bKse0377ZNppmeMJvw+fdBwWuHyCDoN8wznrRFFOkIBKUHyj4GH95/IkyDgZpBqXZwdGdCxotlfxm5frQxOEsil34fqe8KJ2zeyHrSDHowEUp0XbZrDM=,iv:oG8zurCe4FvtKhMd7oURhN1SZCqD8Y+q5dxqNAuX5LU=,tag:G9I38QuimLCHPPzymvxBcw==,type:str]
+  encrypted_regex: api-key
+  version: 3.10.2
