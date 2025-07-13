@@ -5,3 +5,5 @@ resources:
   - db
   - sidecars
   - core
+  - certificate.yaml
+  - monitoring
