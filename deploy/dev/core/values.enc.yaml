@@ -1,17 +1,16 @@
-openai:
-    api-key: ENC[AES256_GCM,data:hJA1E4KyMMCmEJRoi+61qkdPtQPCf2Vr+2oNNuRL0MjnIdLtXRZcTj2nbPDrhRwWCocCwDvvwI+ggezl+DS3pJ24AL5i0m2iEvI+VeTr2D+pDWZrmzuA6AwFQscwuv7oVBJs+eMeI225ymzNIBcCKPUVssP5vaw1R/9vi4yQmRZjPatcn5uKcvwISYyK+h86DpqeMgGte4VFtSGGpa5PS3VlTPI=,iv:wThV90/jHwT95A0E3ZFB+c16Oh26DFtxEDOUJc66H0g=,tag:q5OH43c0OXUtBKCKmAo3Lw==,type:str]
+openai_api_key: ENC[AES256_GCM,data:pSduidTZLAa9QtyhJBGGEyx30TkEQH2UYt/UGNrs0zj7pz1qAB1GJcKNtapG1/INat9ZcY7XYHZ5uRJi5r+VB4entfvlajv16M0Vox5XTTGNxaqINCdHzBAdiBdno3F/U10X0wX2+grrL+qf0yYQtW8phBifgRKKPQBvQYXoA9GhSIFGRsIdmm5Ix4GTewlzk3wybs14xw2SPDQIO9CgNBe+Zz8=,iv:/ShW//yCevFzs964k4pfjCPULfIaNd6udgc3ehzntIo=,tag:x7L9QU2xRja2r5h0uJn/1w==,type:str]
 sops:
     age:
         - recipient: age1a5juyrapd78njp023e8hf0nmzvgwz2h47kcdvum4kh8m8ww4n9fqveqfzl
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBOcWJEMXovODNVZHpDbXd1
-            dklYRUFZN05KZUxwMHNNT3p0RlJtcTh3QmtvCnllVGdSZituWENTUTFscTFNZ3Az
-            Yjk5dWRvaE9IUGlHZzNMeG9yOEdVNkEKLS0tIE1EbnFiUzlZMDZFNURUbWYwOXhR
-            bXFqbGFPT3daeEF4d01sZ1JvOVhtNk0KKEr4cKhybRikCPa9qrJFVlksz6IB2TOV
-            n34+WpnSIHbc4mGKJkCdxzQfkUPrEzsQOERGMKxeSyrjo0iXUtIxug==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB5R21FVTJwaVlhdFROaSt6
+            MVE3TVBwSFRmWUFsbFFaNW1SUnFoOUs5TlV3CmZKRStlUXBpL3lUaWtIalVCNUxW
+            VXVXSnU3SFFzUFoyZWxsVDVmR0VTYlUKLS0tIHVpcEg1Ky9NRmlpU0pZa0NWTVBU
+            NFZ3ZHovSU53czJiQmM5VEFHaDJYNXMKqQHc3UKikJUH1woffB0T/mgdQkrLR7xa
+            AdGJgxXePO1680VdLJlujBcwrqYBsWWblC4fGaodPTcqyyj0kxMzKg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-07-13T09:09:21Z"
-    mac: ENC[AES256_GCM,data:ghKYqJqCvpUWWFGoPnocPtzQZl7+9IXqymsjWjI1wOZsoxWQxCXkAuSYVTH6mZ9CxeygSBJGvkS9DJdWJEhIWZp+CSZoYDQcBc8aJatrEDH0TOaj0/500F0HyDq5UXbfYOgjoiCRyaU9dIaXGikmV8eo8vVk5kYugB6pkI5CW84=,iv:JWANCjHbRSkL9IGa4Vxe1uhK7dl0ozdAjaoXvUIdeoA=,tag:JxNc4d5LxKULqVnuLfjxNg==,type:str]
-    encrypted_regex: api-key
+    lastmodified: "2025-07-13T09:24:46Z"
+    mac: ENC[AES256_GCM,data:5fhN2nC0DIImWfXBQEyy1S/Ukj6ajCqmDp1Ck1UMb9GKByVZ5WD1C23PnwYLdGVrTd5pbjE8zk4+9M1SaMSsvO66jbwDSiCpvC8mB6eciQM7Q21Ctxz+BtFf41WLlyb97W9/+SPMwe5S3iB5s9LpntpNQJLkATsT7JgmazcrTCw=,iv:ncUwQAbBjLBOWgpQe8T2vVpIwdar7MFVCMm3VVqjpi0=,tag:B1/9URbMI0jiVLN+GFb5UA==,type:str]
+    encrypted_regex: openai_api_key
     version: 3.10.2

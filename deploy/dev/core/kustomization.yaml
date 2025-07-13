@@ -4,9 +4,6 @@ namespace: grammr-dev
 resources:
   - release.yaml
 configMapGenerator:
-  - name: clerk-jwt-public-key
-    files:
-      - jwt-key.pub=jwt-key.pub
   - name: core-values-cm
     files:
       - values.yaml=values.yaml

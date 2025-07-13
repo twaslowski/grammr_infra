@@ -6,17 +6,26 @@ environmentVariables:
       secretKeyRef:
         name: grammr-db-pguser-grammr
         key: jdbc-uri
+
   - name: ALLOWED_ORIGIN
     value: https://dev.grammr.app
+
   - name: ANKI_EXPORTER_URL
     value: http://anki-exporter.grammr-dev:8000
+
   - name: SPRING_PROFILES_ACTIVE
     value: runtime
-  - name: JWT_PUBLIC_KEY
-    valueFrom:
-      configMapKeyRef:
-        name: clerk-jwt-public-key
-        key: jwt-key.pub
+
+clerkJwtPublicKey: |
+  -----BEGIN PUBLIC KEY-----
+  MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvsWGcKsfmjJjiN9DnwK2
+  K3mX5T2s6MhGFSVyXCON+xJRfrJPAGd3PYzSPLK6jgWus/7YX3vS5AQ0PCWeRnY0
+  60UXvYwG4H+ayanuqHO14MwTOwZx1LzdqOf24M2u+f94hI+DTk6LT2fOZN+pAiBn
+  RLif4ac+5MVkzl2oWCMw5fFxhrJfZ8Hz7AxP1MxRmkurO4w/pUWoeDxYys3txySH
+  VFEEen38awkq9yLleywb+rG5I/jEWgE/I/qr/U7fYAdQK3rGM51wfqUOsuaND8Ui
+  cnXGsy4uPH038gqQWngClnhUO8TKM0I1gf2I0B9zoKtHuCONNnWtnqrwnHyNOjfI
+  FwIDAQAB
+  -----END PUBLIC KEY-----
 
 ingress:
   enabled: true
@@ -34,19 +43,3 @@ languages:
     inflection:
       enabled: true
       uri: http://inflection-ru.grammr-dev:8000/inflect
-
-sops:
-  age:
-    - recipient: age1a5juyrapd78njp023e8hf0nmzvgwz2h47kcdvum4kh8m8ww4n9fqveqfzl
-      enc: |
-        -----BEGIN AGE ENCRYPTED FILE-----
-        YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBSQWFHOGRpaWI0YVErdWdK
-        NVRmd1NadkNjQitNU25XZ25qUGszcDZJa2tJCnYzOFdlRTMvNXNkd2ZDWXVudGRX
-        SFMvMnV6OWJLMGVPcDQwTk5lcWhPMVEKLS0tIFZsM3NPRFJ5cmFzMnhrTmtPVy9D
-        Z0hMWXJ4V3BBZFhWb211UG9IaFNYRkkKrM8PwwMUvEJKQiFpRd+Wdpwee6d/lxCB
-        MJMz4QQDLe42weWMsnGtJhnL4D3k7D24+xDf3w33CcTpmmBGVlPUcQ==
-        -----END AGE ENCRYPTED FILE-----
-  lastmodified: "2025-07-13T07:26:00Z"
-  mac: ENC[AES256_GCM,data:BB3EBnGXc/6nB2G0PjdAE9OWA7rTeKubRQ9OvHjqmAoKX+HbHdM6Nc9bKse0377ZNppmeMJvw+fdBwWuHyCDoN8wznrRFFOkIBKUHyj4GH95/IkyDgZpBqXZwdGdCxotlfxm5frQxOEsil34fqe8KJ2zeyHrSDHowEUp0XbZrDM=,iv:oG8zurCe4FvtKhMd7oURhN1SZCqD8Y+q5dxqNAuX5LU=,tag:G9I38QuimLCHPPzymvxBcw==,type:str]
-  encrypted_regex: api-key
-  version: 3.10.2
