@@ -11,7 +11,7 @@ configMapGenerator:
     files:
       - values.yaml=values.yaml
 secretGenerator:
-  - name: cloudflared-values
+  - name: grammr-values
     files:
       - values.yaml=values.enc.yaml
 configurations:
