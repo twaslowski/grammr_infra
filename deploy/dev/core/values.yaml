@@ -21,7 +21,7 @@ environmentVariables:
 ingress:
   enabled: true
   className: cloudflare-tunnel
-  host: server.dev.grammr.app
+  host: server-dev.grammr.app
   paths:
     - /api/
     - /actuator/health
@@ -30,7 +30,7 @@ languages:
   - code: ru
     morphology:
       enabled: true
-      uri: https://morphology-ru.grammr:8000/morphological-analysis
+      uri: http://morphology-ru.grammr-dev:8000/morphological-analysis
     inflection:
       enabled: true
       uri: http://inflection-ru.grammr-dev:8000/inflect
